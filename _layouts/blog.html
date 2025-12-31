@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<!-- Blog -->
+<section class="page-section" id="blog">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">{{ page.title }}</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>        
+        {%- if site.posts.size > 0 -%}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <div class="row text-center">
+            {%- for post in site.posts -%}
+            <div class="col-md-4">
+                <h4 class="my-3">  
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </h4>
+                {%- if site.show_excerpts -%}
+                    <p class="text-muted">{{ post.excerpt }}</p>
+                {%- endif -%}
+                {%- if post.tags.size > 0 -%}
+                    <div class="post-tags">
+                    {% for tag in post.tags %}
+                        <span class="badge bg-secondary">{{ tag }}</span>
+                    {% endfor %}
+                    </div>
+                {%- endif -%}
+                <span class="post-meta">{{ post.date | date: date_format }}</span>
+            </div>
+            {%- endfor -%}
+        </div>
+        <p class="rss-subscribe text-center mt-5">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+        {%- endif -%}
+    </div>
+</section>
+
+
+
+
