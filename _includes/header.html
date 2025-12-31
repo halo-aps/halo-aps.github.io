@@ -1,0 +1,41 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top{% if page.layout == 'home' %} has-masthead{% endif %}" id="mainNav">
+    <div class="container">
+        <!--<a class="navbar-brand" href="{% if page.layout == 'home' %}#page-top{% else %}{{ '/' | relative_url }}{% endif %}"><img src="{{ '/assets/img/navbar-logo.svg' | relative_url }}" alt="..." /></a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                {% if page.layout == 'home' %}
+                <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="{% link pages/blog.md %}">Blog</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                {% else %}
+                <!-- <li class="nav-item"><a class="nav-link" href="{{ '/' | relative_url }}#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ '/' | relative_url }}#portfolio">Portfolio</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="{{ '/' | relative_url }}#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ '/' | relative_url }}#team">Team</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="{% link pages/blog.md %}">Blog</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="{{ '/' | relative_url }}#contact">Contact</a></li>                
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+{% if page.layout == 'home' %}
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">H A L O</div>
+		<div class="masthead-subheading"><strong style="text-decoration: underline;">H</strong>ispanic <strong style="text-decoration: underline;">A</strong>stronomy for <strong style="text-decoration: underline;">L</strong>earning and <strong style="text-decoration: underline;">O</strong>bservation</div>
+		<div class="text-center masthead-description"> A group formed by native Spanish-speaking students and faculty from the Astrophysical and Planetary Sciences Department </div>
+		<div class="text-center masthead-description2"> at the University of Colorado Boulder (CU). </div>
+        <!--<a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a> -->
+    </div>
+</header>              
+{% endif %}
